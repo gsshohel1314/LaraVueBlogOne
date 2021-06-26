@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Backend\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\PostController;
+use App\Http\Controllers\Backend\DashboardController;
 
 
 Route::group(['prefix'=>'backend', 'as'=>'backend.', 'middleware'=>['auth']], function(){
@@ -11,4 +12,5 @@ Route::group(['prefix'=>'backend', 'as'=>'backend.', 'middleware'=>['auth']], fu
     // Category
 
     // Post
+    Route::resource('post', PostController::class);
 });
