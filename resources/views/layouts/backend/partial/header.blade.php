@@ -33,7 +33,7 @@
                             class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div>
-                        <strong>{{ Auth::user()->name }}<code>(Role)</code></strong>
+                        <strong>{{ Auth::user()->name }}<code>({{ Auth::user()->role->name }})</code></strong>
                         <i class="fa fa-angle-down ml-2 opacity-8"></i>
                     </div>
                 </div>
