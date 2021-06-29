@@ -6,7 +6,11 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue').default;
+import Vue from 'vue';
+
+// Vue Router
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
 
 /**
  * The following block of code may be used to automatically register your
@@ -27,6 +31,12 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+// Create vue router instance
+const router = new VueRouter({
+    // routes,
+})
+
 const app = new Vue({
     el: '#app',
+    router,
 });

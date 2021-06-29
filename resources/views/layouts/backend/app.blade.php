@@ -21,8 +21,6 @@
   <link rel="stylesheet" href="{{ asset('backend/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
   <!-- JQVMap -->
   <link rel="stylesheet" href="{{ asset('backend/plugins/jqvmap/jqvmap.min.css') }}">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('backend/dist/css/adminlte.min.css') }}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{ asset('backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
   <!-- Daterange picker -->
@@ -31,6 +29,10 @@
   <link rel="stylesheet" href="{{ asset('backend/plugins/summernote/summernote-bs4.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ asset('backend/dist/css/adminlte.min.css') }}">
+  <!-- Styles -->
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -79,6 +81,8 @@
   <script src="{{ asset('backend/dist/js/adminlte.js') }}"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="{{ asset('backend/dist/js/pages/dashboard.js') }}"></script>
+  <!-- Scripts -->
+  <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
