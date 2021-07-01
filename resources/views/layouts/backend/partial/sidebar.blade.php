@@ -16,10 +16,10 @@
              with font-awesome or any other icon font library -->
                 <li class="nav-header text-danger" style="padding-left: 1rem;">DASHBOARDS</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <router-link to="/backend/dashboard" class="nav-link active">
                         <i class="nav-icon fas fa-home"></i>
                         <p>Dashboard</p>
-                    </a>
+                    </router-link>
                 </li>
 
                 <li class="nav-header text-danger">ACCESS CONTROL</li>
@@ -31,10 +31,10 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <router-link to="/backend/category" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>Category</p>
-                    </a>
+                    </router-link>
                 </li>
 
                 <li class="nav-item">
