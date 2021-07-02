@@ -31,20 +31,20 @@
                 </li>
 
                 <li class="nav-item">
-                    <router-link to="/backend/category" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                    <router-link to="/backend/category-list" class="nav-link">
+                        <i class="nav-icon fas fa-cubes"></i>
                         <p>Category</p>
                     </router-link>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <router-link to="" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
                             Post
                             <span class="right badge badge-danger">New</span>
                         </p>
-                    </a>
+                    </router-link>
                 </li>
 
                 <li class="nav-header text-danger">EXAMPLES</li>
