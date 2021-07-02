@@ -32,20 +32,22 @@
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
-                            <form role="form">
+                            <form @submit.prevent='addCategory()'>
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="name">Category Name</label>
-                                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter category name">
+                                        <input v-model="form.name" :class="{ 'is-invalid': form.errors.has('name') }" type="text" class="form-control" name="name" placeholder="Enter category name">
+                                        <has-error :form="form" field="name"></has-error>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="description">Category Description</label>
-                                        <textarea class="form-control" name="description" id="description" cols="30" rows="5" placeholder="Enter Category description..."></textarea>
+                                        <textarea v-model="form.description" :class="{ 'is-invalid': form.errors.has('description') }" class="form-control" name="description" cols="30" rows="5" placeholder="Enter Category description..."></textarea>
+                                        <has-error :form="form" field="description"></has-error>
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Create</button>
+                                    <button :disabled="form.busy" type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Create</button>
                                 </div>
                             </form>
                         </div>
@@ -53,12 +55,39 @@
                 </div>
             </div>
         </section>
+        <!-- snotify -->
+        <vue-snotify></vue-snotify>
     </div>
 </template>
 
 <script>
 export default {
+    data: () => ({
+        form: new Form({
+            name: '',
+            description: ''
+        })
+    }),
 
+    methods: {
+        addCategory() {
+            this.form.busy = true
+            this.form.post('/backend/category/create')
+            .then(response => {
+                // console.log(response.data)
+                // this.$router.push('/backend/category-list')
+                if(this.form.successful){
+                    this.$snotify.success('Category Added', 'Success')
+                }else{
+                    this.$snotify.error('Something went wrong try again later', 'Error')
+                }
+                this.form.reset()
+            })
+            .catch(e => {
+                console.log(e)
+            })
+        }
+    }
 }
 </script>
 

@@ -19,6 +19,24 @@ const router = new VueRouter({
     mode: 'history',
 })
 
+// vform
+import Form from 'vform'
+window.Form = Form
+
+import { Button, HasError, AlertError } from 'vform/src/components/bootstrap5'
+Vue.component(Button.name, Button)
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)
+
+// vue-snotify
+import Snotify, { SnotifyPosition } from 'vue-snotify'
+const snotifyOptions = {
+    toast: {
+        position: SnotifyPosition.rightTop
+    }
+}
+Vue.use(Snotify, snotifyOptions)
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
